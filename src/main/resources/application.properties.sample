@@ -1,0 +1,19 @@
+spring.application.name=desafiomv
+
+# Oracle settings
+spring.datasource.url=jdbc:oracle:thin:@
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver.class-name=oracle.jdbc.OracleDriver
+
+#hibernate configs
+spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+spring.jpa.hibernate.ddl-auto=create-drop #create-drop, update, create, validate
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+spring.jpa.properties.hibernate.use_sql_comments=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.show_sql=true
+spring.web.resources.add-mappings=false
+
+# constantes
+api.url=http://localhost:8080/
