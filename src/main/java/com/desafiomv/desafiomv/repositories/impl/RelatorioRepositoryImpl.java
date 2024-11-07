@@ -1,6 +1,7 @@
 package com.desafiomv.desafiomv.repositories.impl;
 
 import com.desafiomv.desafiomv.dtos.ClienteSaldoRelatorioDto;
+import com.desafiomv.desafiomv.exceptions.JsonInvalidoException;
 import com.desafiomv.desafiomv.repositories.RelatorioRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,7 +33,7 @@ public class RelatorioRepositoryImpl implements RelatorioRepository {
             return convertJsonToClienteSaldoRelatorioDto(jsonString);
 
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new JsonInvalidoException("Erro ao converter JSON para DTO: " + e.getMessage());
         }
     }
 

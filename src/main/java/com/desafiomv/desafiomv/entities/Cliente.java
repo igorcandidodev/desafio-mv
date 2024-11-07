@@ -133,4 +133,8 @@ public class Cliente {
     public void adicionarEmpresa(Empresa empresa) {
         this.empresas.add(empresa);
     }
+
+    public TipoConta getTipoConta() {
+        return tipoConta;
+    }
 }

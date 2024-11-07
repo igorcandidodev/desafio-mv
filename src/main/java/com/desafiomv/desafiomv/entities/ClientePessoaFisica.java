@@ -35,4 +35,8 @@ public class ClientePessoaFisica extends Cliente {
     public String getCpf() {
         return cpf;
     }
+
+    public ZonedDateTime getDataNascimento() {
+        return dataNascimento;
+    }
 }

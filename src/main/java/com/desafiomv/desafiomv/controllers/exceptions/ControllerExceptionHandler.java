@@ -1,6 +1,8 @@
 package com.desafiomv.desafiomv.controllers.exceptions;
 
 import com.desafiomv.desafiomv.dtos.ErroPadraoDto;
+import com.desafiomv.desafiomv.exceptions.ChamadaProcedureException;
+import com.desafiomv.desafiomv.exceptions.JsonInvalidoException;
 import com.desafiomv.desafiomv.exceptions.MovimentacaoInvalidaException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.hibernate.ObjectNotFoundException;
@@ -33,5 +35,23 @@ public class ControllerExceptionHandler {
     public ResponseEntity<ErroPadraoDto> handleIllegalArgumentException(IllegalArgumentException e, HttpServletRequest request) {
         var body = new ErroPadraoDto(ZonedDateTime.now(ZoneId.of(TIME_ZONE)), HttpStatus.BAD_REQUEST.value(), "Argumento inválido", e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+    }
+
+    @ExceptionHandler({Exception.class})
+    public ResponseEntity<ErroPadraoDto> handleException(Exception e, HttpServletRequest request) {
+        var body = new ErroPadraoDto(ZonedDateTime.now(ZoneId.of(TIME_ZONE)), HttpStatus.INTERNAL_SERVER_ERROR.value(), "Erro interno", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
+    }
+
+    @ExceptionHandler({ChamadaProcedureException.class})
+    public ResponseEntity<ErroPadraoDto> handleChamadaProcedureException(ChamadaProcedureException e, HttpServletRequest request) {
+        var body = new ErroPadraoDto(ZonedDateTime.now(ZoneId.of(TIME_ZONE)), HttpStatus.BAD_REQUEST.value(), "Erro ao chamar procedure", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
+    }
+
+    @ExceptionHandler({JsonInvalidoException.class})
+    public ResponseEntity<ErroPadraoDto> handleJsonInvalidoException(JsonInvalidoException e, HttpServletRequest request) {
+        var body = new ErroPadraoDto(ZonedDateTime.now(ZoneId.of(TIME_ZONE)), HttpStatus.BAD_REQUEST.value(), "Erro ao converter JSON", e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 }

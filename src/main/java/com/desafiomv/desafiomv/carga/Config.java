@@ -63,7 +63,7 @@ public class Config implements CommandLineRunner {
                 new ContaDto("001", "1456", "1", "12345", "6", movimentacoes)
         );
 
-        EnderecoDto endereco = new EnderecoDto("Rua X", "Logradouro X", "Complemento X", "Bairro X", "Cidade X", "Estado X", "12345-678");
+        EnderecoDto endereco = new EnderecoDto("12345-678", "Rua X", "123", "Bloco X", "Bairro X", "Cidade X", "Pernambuco");
         return new ClienteDto("Cliente X", "123.456.789-00", null, "clientex@gmail.com", contas, endereco, ZonedDateTime.of(2000, 1, 1, 0, 0, 0, 0, ZoneId.of("UTC")));
     }
 
@@ -72,7 +72,7 @@ public class Config implements CommandLineRunner {
                 new ContaDto("001", "2454", "1", "12346", "6", movimentacoes)
         );
 
-        EnderecoDto endereco = new EnderecoDto("Rua Y", "Logradou Y", "Complemento Y", "Bairro Y", "Cidade Y", "Estado Y", "12345-679");
+        EnderecoDto endereco = new EnderecoDto("12345-679", "Rua Y", "124A", "Bloco Y", "Bairro Y", "Cidade Y", "Pernambuco");
         return new ClienteDto("Cliente Y", null, "00.623.904/0001-73", "clientey@gmail.com", contas, endereco, null);
     }
 
@@ -81,7 +81,7 @@ public class Config implements CommandLineRunner {
                 new ContaDto("001", "3546", "1", "12344", "6", movimentacoes)
         );
 
-        EnderecoDto endereco = new EnderecoDto("Rua Z", "Logradou Z", "Complemento Z", "Bairro Z", "Cidade Z", "Estado Z", "12345-680");
+        EnderecoDto endereco = new EnderecoDto("12345-680", "Rua Z", "124B", "Bloco Z", "Cidade Z", "Cidade Z", "Pernambuco");
         return new ClienteDto("Cliente Z", null, "00.623.904/0001-74", "clientez@gmail.com", contas, endereco, null);
     }
 }

@@ -3,6 +3,7 @@ package com.desafiomv.desafiomv.services;
 import com.desafiomv.desafiomv.dtos.ClienteSaldoRelatorioDto;
 import com.desafiomv.desafiomv.entities.Cliente;
 import com.desafiomv.desafiomv.entities.Empresa;
+import com.desafiomv.desafiomv.exceptions.ChamadaProcedureException;
 import com.desafiomv.desafiomv.repositories.EmpresaRepository;
 import com.desafiomv.desafiomv.repositories.RelatorioRepository;
 import jakarta.persistence.EntityManager;
@@ -42,7 +43,7 @@ public class RelatorioService {
             try {
                 relatorio.add(relatorioRepository.buscarClienteSaldoRelatorio(connection, empresa.getId(), cliente.getId()));
             } catch (SQLException e) {
-                e.printStackTrace();
+                throw new ChamadaProcedureException("Erro ao buscar relatório de saldo do cliente " + e.getMessage());
             }
         }
 
