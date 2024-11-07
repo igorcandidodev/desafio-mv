@@ -97,6 +97,65 @@ public class ControllerExceptionHandler {
 }
 ```
 
+## Exemplo de relatório gerado pela aplicação
+- Relatório formatado
+![Diagrama de classes](RelatorioGeradoPelaAplicacao.png)
+
+- Relatório JSON
+```json
+[
+    {
+        "nome": "Cliente X",
+        "dataCadastro": "07/11/24 08:55:57,695346 -03:00",
+        "logradouro": "Rua X",
+        "numero": "123",
+        "complemento": "Bloco X",
+        "bairro": "Bairro X",
+        "cidade": "Cidade X",
+        "estado": "Pernambuco",
+        "cep": "12345-678",
+        "movimentacao_credito": 1,
+        "movimentacao_debito": 0,
+        "taxa_servico": 1,
+        "saldo_inicial": 1000,
+        "saldo_final": 999
+    },
+    {
+        "nome": "Cliente Z",
+        "dataCadastro": "07/11/24 08:55:57,822333 -03:00",
+        "logradouro": "Rua Z",
+        "numero": "124B",
+        "complemento": "Bloco Z",
+        "bairro": "Cidade Z",
+        "cidade": "Cidade Z",
+        "estado": "Pernambuco",
+        "cep": "12345-680",
+        "movimentacao_credito": 1,
+        "movimentacao_debito": 0,
+        "taxa_servico": 1,
+        "saldo_inicial": 2000,
+        "saldo_final": 1999
+    },
+    {
+        "nome": "Cliente Y",
+        "dataCadastro": "07/11/24 08:55:57,777191 -03:00",
+        "logradouro": "Rua Y",
+        "numero": "124A",
+        "complemento": "Bloco Y",
+        "bairro": "Bairro Y",
+        "cidade": "Cidade Y",
+        "estado": "Pernambuco",
+        "cep": "12345-679",
+        "movimentacao_credito": 1,
+        "movimentacao_debito": 0,
+        "taxa_servico": 1,
+        "saldo_inicial": 2000,
+        "saldo_final": 1999
+    }
+]
+
+```
+
 ## Conclusão
 
 Este projeto segue boas práticas de desenvolvimento e utiliza padrões de projeto reconhecidos para garantir um código limpo, modular e fácil de manter. A estrutura do projeto facilita a escalabilidade e a adição de novas funcionalidades.
