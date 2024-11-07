@@ -34,7 +34,7 @@ public class ReceitaEmpresaService {
                 int quantidadeMovimentacoes = conta.getQuantidadeMovimentacoesUltimos30Dias();
                 BigDecimal taxa = taxaCobranca.calcularTaxaCobrancaPorMovimentacao(quantidadeMovimentacoes);
 
-                var movimentacaoSaida = new Movimentacao("Taxa de serviço", TipoMovimentacao.DEBITO, taxa, conta);
+                var movimentacaoSaida = new Movimentacao("Taxa de serviço por movimentação", TipoMovimentacao.DEBITO, taxa, conta);
                 var movimentacaoEntrada = new Movimentacao("Taxa de serviço cliente: " + cliente.getNome(), TipoMovimentacao.CREDITO, taxa, empresa.getContas().iterator().next());
 
                 conta.adicionarMovimentacao(movimentacaoSaida);
